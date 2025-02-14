@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: transaction
+
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=transact;encrypt=false
+    username: sa
+    password: kerberos-2025
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate.dialect: org.hibernate.dialect.SQLServerDialect
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:sql/ta_database.sql
