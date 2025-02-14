@@ -1,4 +1,4 @@
-package org.kerberos.transaction.entity;
+package org.kerberos.transaction.data;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -14,6 +14,7 @@ import java.time.LocalDate;
 @Table(name = "\"transaction\"")
 public class Transaction {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "trxId", nullable = false)
     private Long id;
 

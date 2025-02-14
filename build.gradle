@@ -65,10 +65,10 @@ tasks.register('generateApi', GenerateTask) {
     apiPackage = 'org.kerberos.transaction.api'
     modelPackage = 'org.kerberos.transaction.model'
     configOptions = [
-            dateLibrary: 'java8',
-            interfaceOnly: 'false',
+            dateLibrary   : 'java8',
+            interfaceOnly : 'false',
             useSpringBoot3: 'true',
-            useOptional: 'true'
+            useOptional   : 'true'
     ]
 }
 

@@ -1,9 +1,6 @@
-package org.kerberos.transaction.entity;
+package org.kerberos.transaction.data;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Nationalized;
@@ -14,6 +11,7 @@ import org.hibernate.annotations.Nationalized;
 @Table(name = "account")
 public class Account {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "accountId", nullable = false)
     private Long id;
 

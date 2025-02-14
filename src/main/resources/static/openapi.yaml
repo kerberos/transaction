@@ -1,0 +1,88 @@
+openapi: 3.0.3
+info:
+  title: Account Transactions API
+  version: 1.0.0
+paths:
+  /accounts/{accountNumber}/transactions:
+    get:
+      summary: Get transactions for a specific account
+      parameters:
+        - name: accountNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of transactions for the given account
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Transaction'
+components:
+  schemas:
+    Transaction:
+      type: object
+      properties:
+        amount:
+          type: object
+          properties:
+            currency:
+              type: string
+              nullable: false
+            value:
+              type: number
+              nullable: false
+        bankref:
+          type: string
+          nullable: false
+        bookingDate:
+          type: string
+          format: date
+        counterPartyAccount:
+          type: object
+          properties:
+            accountName:
+              type: string
+            accountNumber:
+              type: string
+            bankCode:
+              type: string
+        creditDebitIndicator:
+          type: string
+          enum: [CRDT, DBIT]
+        details:
+          type: object
+          properties:
+            detail1:
+              type: string
+        id:
+          type: string
+          nullable: false
+        ownAccountNumber:
+          type: string
+        postingDate:
+          type: string
+          format: date
+          nullable: false
+        productBankRef:
+          type: string
+        specificSymbol:
+          type: string
+        statementNumber:
+          type: string
+        statementPeriod:
+          type: string
+        transactionId:
+          type: string
+          nullable: false
+        transactionType:
+          type: string
+          nullable: false
+        transactionTypeCode:
+          type: integer
+          nullable: false
+        variableSymbol:
+          type: string

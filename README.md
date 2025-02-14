@@ -2,7 +2,7 @@
 
 Spring boot Web application with REST API for getting list of transactions from DB.
 
-## How to install and run
+## Install and run
 
 1. Download the project or clone using git
    ```bash
@@ -30,6 +30,11 @@ Spring boot Web application with REST API for getting list of transactions from 
 4. Run the TransactionAplication.
    After database objects are created, change prperty to `sql.init.mode: never` to skip SQL script executions for further app runs.
 
-## How to access API documentation
+## API testing
 
-1. Access ```http://localhost:8083/``` in browser
+example request http://localhost:8080/accounts/1234567890/transactions
+// TODO fix problems with JPA mapping and thus usage of Repository.
+
+## API documentation
+
+Access http://localhost:8080/swagger-ui.html in browser.
