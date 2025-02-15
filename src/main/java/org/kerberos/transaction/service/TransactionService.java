@@ -16,6 +16,6 @@ public class TransactionService {
     }
 
     public List<Transaction> getTransactions(String accountNumber) {
-        return transactionRepository.findByOwnAccountNumber(accountNumber);
+        return transactionRepository.findByCounterPartyAccount_Number(accountNumber);
     }
 }

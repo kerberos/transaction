@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface TransactionRepository extends JpaRepository<Transaction, Long> {
-//    List<Transaction> findByCounterPartyAccount_Number(String accountNumber);
 
-    List<Transaction> findByOwnAccountNumber(String accountNumber);
+    List<Transaction> findByCounterPartyAccount_Number(String accountNumber);
+
 }
