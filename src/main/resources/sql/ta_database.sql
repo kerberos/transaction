@@ -81,21 +81,21 @@ INSERT INTO account (name, number, code) VALUES
 INSERT INTO [transaction]
 (amount, currency, [id], bankref, transactionId, bookingDate, postingDate, creditDebitIndicator, ownAccountNumber, counterPartyAccount, detail1, detail2, detail3, detail4, productBankRef, transactionType, statement, constantSymbol, specificSymbol, variableSymbol)
 VALUES
-    (1000.00, 'CZK', 'TRX001', 'BANKREF001', 'TXN001', '2025-01-01', '2025-01-01', 'Cred', '1234567890', 1001, 'Payment for services', NULL, NULL, NULL, 'Product01', 1001, 1001, 'CST001', 'SPEC001', 'VAR001'),
-    (2000.00, 'CZK', 'TRX002', 'BANKREF002', 'TXN002', '2025-01-05', '2025-01-05', 'Debi', '9876543210', 1002, 'Refund for product', NULL, NULL, NULL, 'Product02', 1002, 1001, 'CST002', 'SPEC002', 'VAR002'),
-    (1500.00, 'CZK', 'TRX003', 'BANKREF003', 'TXN003', '2025-01-10', '2025-01-10', 'Cred', '5555555555', 1003, 'Transfer to another account', NULL, NULL, NULL, 'Product03', 1003, 1002, 'CST003', 'SPEC003', 'VAR003'),
-    (300.00, 'CZK', 'TRX004', 'BANKREF004', 'TXN004', '2025-01-15', '2025-01-15', 'Debi', '6666666666', 1004, 'Charge for account maintenance', NULL, NULL, NULL, 'Product04', 1004, 1002, 'CST004', 'SPEC004', 'VAR004'),
-    (5000.00, 'CZK', 'TRX005', 'BANKREF005', 'TXN005', '2025-01-20', '2025-01-20', 'Cred', '7777777777', 1000, 'Withdrawal from ATM', NULL, NULL, NULL, 'Product05', 1000, 1003, 'CST005', 'SPEC005', 'VAR005'),
-    (1200.00, 'CZK', 'TRX006', 'BANKREF006', 'TXN006', '2025-02-01', '2025-02-01', 'Debi', '1234567890', 1001, 'Payment for goods', NULL, NULL, NULL, 'Product06', 1001, 1002, 'CST006', 'SPEC006', 'VAR006'),
-    (700.00, 'CZK', 'TRX007', 'BANKREF007', 'TXN007', '2025-02-05', '2025-02-05', 'Cred', '9876543210', 1002, 'Refund for service', NULL, NULL, NULL, 'Product07', 1002, 1003, 'CST007', 'SPEC007', 'VAR007'),
-    (2500.00, 'CZK', 'TRX008', 'BANKREF008', 'TXN008', '2025-02-10', '2025-02-10', 'Debi', '5555555555', 1003, 'Transfer from another account', NULL, NULL, NULL, 'Product08', 1003, 1003, 'CST008', 'SPEC008', 'VAR008'),
-    (400.00, 'CZK', 'TRX009', 'BANKREF009', 'TXN009', '2025-02-15', '2025-02-15', 'Cred', '6666666666', 1004, 'Charge for transfer', NULL, NULL, NULL, 'Product09', 1004, 1004, 'CST009', 'SPEC009', 'VAR009'),
-    (8000.00, 'CZK', 'TRX010', 'BANKREF010', 'TXN010', '2025-02-20', '2025-02-20', 'Debi', '7777777777', 1000, 'Withdrawal for travel expenses', NULL, NULL, NULL, 'Product10', 1000, 1004, 'CST010', 'SPEC010', 'VAR010'),
-    (1500.00, 'CZK', 'TRX011', 'BANKREF011', 'TXN011', '2025-03-01', '2025-03-01', 'Cred', '1234567890', 1001, 'Payment for subscription', NULL, NULL, NULL, 'Product11', 1001, 1003, 'CST011', 'SPEC011', 'VAR011'),
-    (2200.00, 'CZK', 'TRX012', 'BANKREF012', 'TXN012', '2025-03-05', '2025-03-05', 'Debi', '9876543210', 1002, 'Refund for overcharge', NULL, NULL, NULL, 'Product12', 1002, 1004, 'CST012', 'SPEC012', 'VAR012'),
-    (1700.00, 'CZK', 'TRX013', 'BANKREF013', 'TXN013', '2025-03-10', '2025-03-10', 'Cred', '5555555555', 1003, 'Transfer received', NULL, NULL, NULL, 'Product13', 1003, 1004, 'CST013', 'SPEC013', 'VAR013'),
-    (600.00, 'CZK', 'TRX014', 'BANKREF014', 'TXN014', '2025-03-15', '2025-03-15', 'Debi', '6666666666', 1004, 'Charge for late payment', NULL, NULL, NULL, 'Product14', 1004, 1000, 'CST014', 'SPEC014', 'VAR014'),
-    (9000.00, 'CZK', 'TRX015', 'BANKREF015', 'TXN015', '2025-03-20', '2025-03-20', 'Cred', '7777777777', 1000, 'Withdrawal for investment', NULL, NULL, NULL, 'Product15', 1000, 1000, 'CST015', 'SPEC015', 'VAR015');
+    (1000.00, 'CZK', 'TRX001', 'BANKREF001', 'TXN001', '2025-01-01', '2025-01-01', 'CRDT', '1234567890', 1001, 'Payment for services', NULL, NULL, NULL, 'Product01', 1001, 1001, 'CST001', 'SPEC001', 'VAR001'),
+    (2000.00, 'CZK', 'TRX002', 'BANKREF002', 'TXN002', '2025-01-05', '2025-01-05', 'DBIT', '9876543210', 1002, 'Refund for product', NULL, NULL, NULL, 'Product02', 1002, 1001, 'CST002', 'SPEC002', 'VAR002'),
+    (1500.00, 'CZK', 'TRX003', 'BANKREF003', 'TXN003', '2025-01-10', '2025-01-10', 'CRDT', '5555555555', 1003, 'Transfer to another account', NULL, NULL, NULL, 'Product03', 1003, 1002, 'CST003', 'SPEC003', 'VAR003'),
+    (300.00, 'CZK', 'TRX004', 'BANKREF004', 'TXN004', '2025-01-15', '2025-01-15', 'DBIT', '6666666666', 1004, 'Charge for account maintenance', NULL, NULL, NULL, 'Product04', 1004, 1002, 'CST004', 'SPEC004', 'VAR004'),
+    (5000.00, 'CZK', 'TRX005', 'BANKREF005', 'TXN005', '2025-01-20', '2025-01-20', 'CRDT', '7777777777', 1000, 'Withdrawal from ATM', NULL, NULL, NULL, 'Product05', 1000, 1003, 'CST005', 'SPEC005', 'VAR005'),
+    (1200.00, 'CZK', 'TRX006', 'BANKREF006', 'TXN006', '2025-02-01', '2025-02-01', 'DBIT', '1234567890', 1001, 'Payment for goods', NULL, NULL, NULL, 'Product06', 1001, 1002, 'CST006', 'SPEC006', 'VAR006'),
+    (700.00, 'CZK', 'TRX007', 'BANKREF007', 'TXN007', '2025-02-05', '2025-02-05', 'CRDT', '9876543210', 1002, 'Refund for service', NULL, NULL, NULL, 'Product07', 1002, 1003, 'CST007', 'SPEC007', 'VAR007'),
+    (2500.00, 'CZK', 'TRX008', 'BANKREF008', 'TXN008', '2025-02-10', '2025-02-10', 'DBIT', '5555555555', 1003, 'Transfer from another account', NULL, NULL, NULL, 'Product08', 1003, 1003, 'CST008', 'SPEC008', 'VAR008'),
+    (400.00, 'CZK', 'TRX009', 'BANKREF009', 'TXN009', '2025-02-15', '2025-02-15', 'CRDT', '6666666666', 1004, 'Charge for transfer', NULL, NULL, NULL, 'Product09', 1004, 1004, 'CST009', 'SPEC009', 'VAR009'),
+    (8000.00, 'CZK', 'TRX010', 'BANKREF010', 'TXN010', '2025-02-20', '2025-02-20', 'DBIT', '7777777777', 1000, 'Withdrawal for travel expenses', NULL, NULL, NULL, 'Product10', 1000, 1004, 'CST010', 'SPEC010', 'VAR010'),
+    (1500.00, 'CZK', 'TRX011', 'BANKREF011', 'TXN011', '2025-03-01', '2025-03-01', 'CRDT', '1234567890', 1001, 'Payment for subscription', NULL, NULL, NULL, 'Product11', 1001, 1003, 'CST011', 'SPEC011', 'VAR011'),
+    (2200.00, 'CZK', 'TRX012', 'BANKREF012', 'TXN012', '2025-03-05', '2025-03-05', 'DBIT', '9876543210', 1002, 'Refund for overcharge', NULL, NULL, NULL, 'Product12', 1002, 1004, 'CST012', 'SPEC012', 'VAR012'),
+    (1700.00, 'CZK', 'TRX013', 'BANKREF013', 'TXN013', '2025-03-10', '2025-03-10', 'CRDT', '5555555555', 1003, 'Transfer received', NULL, NULL, NULL, 'Product13', 1003, 1004, 'CST013', 'SPEC013', 'VAR013'),
+    (600.00, 'CZK', 'TRX014', 'BANKREF014', 'TXN014', '2025-03-15', '2025-03-15', 'DBIT', '6666666666', 1004, 'Charge for late payment', NULL, NULL, NULL, 'Product14', 1004, 1000, 'CST014', 'SPEC014', 'VAR014'),
+    (9000.00, 'CZK', 'TRX015', 'BANKREF015', 'TXN015', '2025-03-20', '2025-03-20', 'CRDT', '7777777777', 1000, 'Withdrawal for investment', NULL, NULL, NULL, 'Product15', 1000, 1000, 'CST015', 'SPEC015', 'VAR015');
 
 -- insert scripts END
 
