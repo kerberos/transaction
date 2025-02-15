@@ -8,11 +8,11 @@ import org.hibernate.annotations.Nationalized;
 @Getter
 @Setter
 @Entity
-@Table(name = "transactionType")
+@Table(name = "transactiontype")
 public class TransactionType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "trxTypeId", nullable = false)
+    @Column(name = "trxtypeid", nullable = false)
     private Long id;
 
     @Nationalized

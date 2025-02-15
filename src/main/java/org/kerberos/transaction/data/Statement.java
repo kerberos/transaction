@@ -12,7 +12,7 @@ import org.hibernate.annotations.Nationalized;
 public class Statement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "statementId", nullable = false)
+    @Column(name = "statementid", nullable = false)
     private Long id;
 
     @Nationalized

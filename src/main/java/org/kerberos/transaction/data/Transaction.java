@@ -15,7 +15,7 @@ import java.time.LocalDate;
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "trxId", nullable = false)
+    @Column(name = "trxid", nullable = false)
     private Long id;
 
     @Column(name = "amount", nullable = false, precision = 19, scale = 2)
@@ -34,24 +34,24 @@ public class Transaction {
     private String bankref;
 
     @Nationalized
-    @Column(name = "transactionId", nullable = false, length = 20)
+    @Column(name = "transactionid", nullable = false, length = 20)
     private String transactionId;
 
-    @Column(name = "bookingDate")
+    @Column(name = "bookingdate")
     private LocalDate bookingDate;
 
-    @Column(name = "postingDate", nullable = false)
+    @Column(name = "postingdate", nullable = false)
     private LocalDate postingDate;
 
-    @Column(name = "creditDebitIndicator", length = 4)
+    @Column(name = "creditdebitindicator", length = 4)
     private String creditDebitIndicator;
 
     @Nationalized
-    @Column(name = "ownAccountNumber", length = 20)
+    @Column(name = "ownaccountnumber", length = 20)
     private String ownAccountNumber;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "counterPartyAccount", nullable = false)
+    @JoinColumn(name = "counterpartyaccount", nullable = false)
     private Account counterPartyAccount;
 
     @Nationalized
@@ -71,24 +71,24 @@ public class Transaction {
     private String detail4;
 
     @Nationalized
-    @Column(name = "productBankRef", length = 50)
+    @Column(name = "productbankref", length = 50)
     private String productBankRef;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "transactionType", nullable = false)
+    @JoinColumn(name = "transactiontype", nullable = false)
     private TransactionType transactionType;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "statement", nullable = false)
     private Statement statement;
 
-    @Column(name = "constantSymbol", length = 10)
+    @Column(name = "constantsymbol", length = 10)
     private String constantSymbol;
 
-    @Column(name = "specificSymbol", length = 10)
+    @Column(name = "specificsymbol", length = 10)
     private String specificSymbol;
 
-    @Column(name = "variableSymbol", length = 10)
+    @Column(name = "variablesymbol", length = 10)
     private String variableSymbol;
 
 }

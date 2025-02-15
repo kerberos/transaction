@@ -33,7 +33,6 @@ Spring boot Web application with REST API for getting list of transactions from 
 ## API testing
 
 example request http://localhost:8080/accounts/1234567890/transactions
-// TODO fix problems with JPA mapping and thus usage of Repository.
 
 ## API documentation
 
