@@ -19,14 +19,14 @@ import java.util.Optional;
 @Builder
 public class TransactionDTO {
 
-    private Optional<TransactionAmountDTO> amount = Optional.empty();
+    private Optional<TransactionAmountDTO> amount;
 
-    private Optional<String> bankref = Optional.empty();
+    private Optional<String> bankref;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private Optional<LocalDate> bookingDate = Optional.empty();
+    private Optional<LocalDate> bookingDate;
 
-    private Optional<TransactionCounterPartyAccountDTO> counterPartyAccount = Optional.empty();
+    private Optional<TransactionCounterPartyAccountDTO> counterPartyAccount;
 
     /**
      * Gets or Sets creditDebitIndicator
@@ -36,7 +36,7 @@ public class TransactionDTO {
 
         DBIT("DBIT");
 
-        private String value;
+        private final String value;
 
         CreditDebitIndicatorEnum(String value) {
             this.value = value;
@@ -63,37 +63,32 @@ public class TransactionDTO {
         }
     }
 
-    private Optional<CreditDebitIndicatorEnum> creditDebitIndicator = Optional.empty();
+    private Optional<CreditDebitIndicatorEnum> creditDebitIndicator;
 
-    private Optional<TransactionDetailsDTO> details = Optional.empty();
+    private Optional<TransactionDetailsDTO> details;
 
-    private Optional<String> id = Optional.empty();
+    private Optional<String> id;
 
-    private Optional<String> ownAccountNumber = Optional.empty();
+    private Optional<String> ownAccountNumber;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private Optional<LocalDate> postingDate = Optional.empty();
+    private Optional<LocalDate> postingDate;
 
-    private Optional<String> productBankRef = Optional.empty();
+    private Optional<String> productBankRef;
 
-    private Optional<String> specificSymbol = Optional.empty();
+    private Optional<String> specificSymbol;
 
-    private Optional<String> statementNumber = Optional.empty();
+    private Optional<String> statementNumber;
 
-    private Optional<String> statementPeriod = Optional.empty();
+    private Optional<String> statementPeriod;
 
-    private Optional<String> transactionId = Optional.empty();
+    private Optional<String> transactionId;
 
-    private Optional<String> transactionType = Optional.empty();
+    private Optional<String> transactionType;
 
-    private Optional<Integer> transactionTypeCode = Optional.empty();
+    private Optional<Integer> transactionTypeCode;
 
-    private Optional<String> variableSymbol = Optional.empty();
-
-    public TransactionDTO amount(TransactionAmountDTO amount) {
-        this.amount = Optional.of(amount);
-        return this;
-    }
+    private Optional<String> variableSymbol;
 
     /**
      * Get amount
@@ -105,15 +100,6 @@ public class TransactionDTO {
     @JsonProperty("amount")
     public Optional<TransactionAmountDTO> getAmount() {
         return amount;
-    }
-
-    public void setAmount(Optional<TransactionAmountDTO> amount) {
-        this.amount = amount;
-    }
-
-    public TransactionDTO bankref(String bankref) {
-        this.bankref = Optional.of(bankref);
-        return this;
     }
 
     /**
@@ -128,15 +114,6 @@ public class TransactionDTO {
         return bankref;
     }
 
-    public void setBankref(Optional<String> bankref) {
-        this.bankref = bankref;
-    }
-
-    public TransactionDTO bookingDate(LocalDate bookingDate) {
-        this.bookingDate = Optional.of(bookingDate);
-        return this;
-    }
-
     /**
      * Get bookingDate
      *
@@ -147,15 +124,6 @@ public class TransactionDTO {
     @JsonProperty("bookingDate")
     public Optional<LocalDate> getBookingDate() {
         return bookingDate;
-    }
-
-    public void setBookingDate(Optional<LocalDate> bookingDate) {
-        this.bookingDate = bookingDate;
-    }
-
-    public TransactionDTO counterPartyAccount(TransactionCounterPartyAccountDTO counterPartyAccount) {
-        this.counterPartyAccount = Optional.of(counterPartyAccount);
-        return this;
     }
 
     /**
@@ -170,15 +138,6 @@ public class TransactionDTO {
         return counterPartyAccount;
     }
 
-    public void setCounterPartyAccount(Optional<TransactionCounterPartyAccountDTO> counterPartyAccount) {
-        this.counterPartyAccount = counterPartyAccount;
-    }
-
-    public TransactionDTO creditDebitIndicator(CreditDebitIndicatorEnum creditDebitIndicator) {
-        this.creditDebitIndicator = Optional.of(creditDebitIndicator);
-        return this;
-    }
-
     /**
      * Get creditDebitIndicator
      *
@@ -191,15 +150,6 @@ public class TransactionDTO {
         return creditDebitIndicator;
     }
 
-    public void setCreditDebitIndicator(Optional<CreditDebitIndicatorEnum> creditDebitIndicator) {
-        this.creditDebitIndicator = creditDebitIndicator;
-    }
-
-    public TransactionDTO details(TransactionDetailsDTO details) {
-        this.details = Optional.of(details);
-        return this;
-    }
-
     /**
      * Get details
      *
@@ -210,10 +160,6 @@ public class TransactionDTO {
     @JsonProperty("details")
     public Optional<TransactionDetailsDTO> getDetails() {
         return details;
-    }
-
-    public void setDetails(Optional<TransactionDetailsDTO> details) {
-        this.details = details;
     }
 
     public TransactionDTO id(String id) {
@@ -233,15 +179,6 @@ public class TransactionDTO {
         return id;
     }
 
-    public void setId(Optional<String> id) {
-        this.id = id;
-    }
-
-    public TransactionDTO ownAccountNumber(String ownAccountNumber) {
-        this.ownAccountNumber = Optional.of(ownAccountNumber);
-        return this;
-    }
-
     /**
      * Get ownAccountNumber
      *
@@ -252,15 +189,6 @@ public class TransactionDTO {
     @JsonProperty("ownAccountNumber")
     public Optional<String> getOwnAccountNumber() {
         return ownAccountNumber;
-    }
-
-    public void setOwnAccountNumber(Optional<String> ownAccountNumber) {
-        this.ownAccountNumber = ownAccountNumber;
-    }
-
-    public TransactionDTO postingDate(LocalDate postingDate) {
-        this.postingDate = Optional.of(postingDate);
-        return this;
     }
 
     /**
@@ -275,15 +203,6 @@ public class TransactionDTO {
         return postingDate;
     }
 
-    public void setPostingDate(Optional<LocalDate> postingDate) {
-        this.postingDate = postingDate;
-    }
-
-    public TransactionDTO productBankRef(String productBankRef) {
-        this.productBankRef = Optional.of(productBankRef);
-        return this;
-    }
-
     /**
      * Get productBankRef
      *
@@ -294,15 +213,6 @@ public class TransactionDTO {
     @JsonProperty("productBankRef")
     public Optional<String> getProductBankRef() {
         return productBankRef;
-    }
-
-    public void setProductBankRef(Optional<String> productBankRef) {
-        this.productBankRef = productBankRef;
-    }
-
-    public TransactionDTO specificSymbol(String specificSymbol) {
-        this.specificSymbol = Optional.of(specificSymbol);
-        return this;
     }
 
     /**
@@ -317,15 +227,6 @@ public class TransactionDTO {
         return specificSymbol;
     }
 
-    public void setSpecificSymbol(Optional<String> specificSymbol) {
-        this.specificSymbol = specificSymbol;
-    }
-
-    public TransactionDTO statementNumber(String statementNumber) {
-        this.statementNumber = Optional.of(statementNumber);
-        return this;
-    }
-
     /**
      * Get statementNumber
      *
@@ -336,15 +237,6 @@ public class TransactionDTO {
     @JsonProperty("statementNumber")
     public Optional<String> getStatementNumber() {
         return statementNumber;
-    }
-
-    public void setStatementNumber(Optional<String> statementNumber) {
-        this.statementNumber = statementNumber;
-    }
-
-    public TransactionDTO statementPeriod(String statementPeriod) {
-        this.statementPeriod = Optional.of(statementPeriod);
-        return this;
     }
 
     /**
@@ -359,15 +251,6 @@ public class TransactionDTO {
         return statementPeriod;
     }
 
-    public void setStatementPeriod(Optional<String> statementPeriod) {
-        this.statementPeriod = statementPeriod;
-    }
-
-    public TransactionDTO transactionId(String transactionId) {
-        this.transactionId = Optional.of(transactionId);
-        return this;
-    }
-
     /**
      * Get transactionId
      *
@@ -378,15 +261,6 @@ public class TransactionDTO {
     @JsonProperty("transactionId")
     public Optional<String> getTransactionId() {
         return transactionId;
-    }
-
-    public void setTransactionId(Optional<String> transactionId) {
-        this.transactionId = transactionId;
-    }
-
-    public TransactionDTO transactionType(String transactionType) {
-        this.transactionType = Optional.of(transactionType);
-        return this;
     }
 
     /**
@@ -401,15 +275,6 @@ public class TransactionDTO {
         return transactionType;
     }
 
-    public void setTransactionType(Optional<String> transactionType) {
-        this.transactionType = transactionType;
-    }
-
-    public TransactionDTO transactionTypeCode(Integer transactionTypeCode) {
-        this.transactionTypeCode = Optional.of(transactionTypeCode);
-        return this;
-    }
-
     /**
      * Get transactionTypeCode
      *
@@ -422,15 +287,6 @@ public class TransactionDTO {
         return transactionTypeCode;
     }
 
-    public void setTransactionTypeCode(Optional<Integer> transactionTypeCode) {
-        this.transactionTypeCode = transactionTypeCode;
-    }
-
-    public TransactionDTO variableSymbol(String variableSymbol) {
-        this.variableSymbol = Optional.of(variableSymbol);
-        return this;
-    }
-
     /**
      * Get variableSymbol
      *
@@ -441,10 +297,6 @@ public class TransactionDTO {
     @JsonProperty("variableSymbol")
     public Optional<String> getVariableSymbol() {
         return variableSymbol;
-    }
-
-    public void setVariableSymbol(Optional<String> variableSymbol) {
-        this.variableSymbol = variableSymbol;
     }
 
     @Override
@@ -482,27 +334,26 @@ public class TransactionDTO {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class Transaction {\n");
-        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-        sb.append("    bankref: ").append(toIndentedString(bankref)).append("\n");
-        sb.append("    bookingDate: ").append(toIndentedString(bookingDate)).append("\n");
-        sb.append("    counterPartyAccount: ").append(toIndentedString(counterPartyAccount)).append("\n");
-        sb.append("    creditDebitIndicator: ").append(toIndentedString(creditDebitIndicator)).append("\n");
-        sb.append("    details: ").append(toIndentedString(details)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    ownAccountNumber: ").append(toIndentedString(ownAccountNumber)).append("\n");
-        sb.append("    postingDate: ").append(toIndentedString(postingDate)).append("\n");
-        sb.append("    productBankRef: ").append(toIndentedString(productBankRef)).append("\n");
-        sb.append("    specificSymbol: ").append(toIndentedString(specificSymbol)).append("\n");
-        sb.append("    statementNumber: ").append(toIndentedString(statementNumber)).append("\n");
-        sb.append("    statementPeriod: ").append(toIndentedString(statementPeriod)).append("\n");
-        sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-        sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
-        sb.append("    transactionTypeCode: ").append(toIndentedString(transactionTypeCode)).append("\n");
-        sb.append("    variableSymbol: ").append(toIndentedString(variableSymbol)).append("\n");
-        sb.append("}");
-        return sb.toString();
+        String sb = "class Transaction {\n" +
+                "    amount: " + toIndentedString(amount) + "\n" +
+                "    bankref: " + toIndentedString(bankref) + "\n" +
+                "    bookingDate: " + toIndentedString(bookingDate) + "\n" +
+                "    counterPartyAccount: " + toIndentedString(counterPartyAccount) + "\n" +
+                "    creditDebitIndicator: " + toIndentedString(creditDebitIndicator) + "\n" +
+                "    details: " + toIndentedString(details) + "\n" +
+                "    id: " + toIndentedString(id) + "\n" +
+                "    ownAccountNumber: " + toIndentedString(ownAccountNumber) + "\n" +
+                "    postingDate: " + toIndentedString(postingDate) + "\n" +
+                "    productBankRef: " + toIndentedString(productBankRef) + "\n" +
+                "    specificSymbol: " + toIndentedString(specificSymbol) + "\n" +
+                "    statementNumber: " + toIndentedString(statementNumber) + "\n" +
+                "    statementPeriod: " + toIndentedString(statementPeriod) + "\n" +
+                "    transactionId: " + toIndentedString(transactionId) + "\n" +
+                "    transactionType: " + toIndentedString(transactionType) + "\n" +
+                "    transactionTypeCode: " + toIndentedString(transactionTypeCode) + "\n" +
+                "    variableSymbol: " + toIndentedString(variableSymbol) + "\n" +
+                "}";
+        return sb;
     }
 
     /**

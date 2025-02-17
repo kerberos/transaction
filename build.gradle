@@ -58,25 +58,5 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-tasks.register('generateApi', GenerateTask) {
-    generatorName = 'spring'
-    inputSpec = "$rootDir/src/main/resources/static/openapi.yaml"
-    outputDir = "$buildDir/generated"
-    apiPackage = 'org.kerberos.transaction.api'
-    modelPackage = 'org.kerberos.transaction.model'
-    configOptions = [
-            dateLibrary   : 'java8',
-            interfaceOnly : 'false',
-            useSpringBoot3: 'true',
-            useOptional   : 'true'
-    ]
-}
-
-sourceSets {
-    main {
-        java.srcDir "$buildDir/generated/src/main/java"
-    }
-}
-
 apply plugin: 'org.openapi.generator'
 
